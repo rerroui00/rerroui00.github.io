@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Контакты</title>
+    <link rel="stylesheet" href="css/css.css">
+    <link rel="icon" href="img/fav.png" type="image/x-icon">
+</head>
+
+<header>
+    <div class="container">
+        <div class="menu">
+            <div class="logo">
+                <img src="img/лого.png" alt="">
+                <h1>МБДОУ ДЕТСКИЙ <br> САД №147</h1>
+            </div>
+    
+            <div class="nav">
+                <ul>
+                    <li>
+                        <a href="index.html">Главная</a>
+                    </li>
+    
+                    <li>
+                        <a href="index2.html">О нас</a>
+                    </li>
+    
+                    <li>
+                        <a href="index3.html">Специалисты</a>
+                    </li>
+    
+                    <li>
+                        <a href="index4.html">Мероприятия</a>
+                    </li>
+    
+                    <li>
+                        <a href="index5.html">Программа развития</a>
+                    </li>
+    
+                    <li class="bold-nav">
+                        <a href="index6.html">Контакты</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</header>
+
+<body>
+    <div class="banner2">
+        <div class="banner2-img">
+            <img src="img/contacts.png" alt="" width="1910px">
+            <div class="container">
+                <h1 class="banner-contact">МЫ ЗДЕСЬ, ЧТОБЫ ПОМОЧЬ</h1>
+                <p>Обращайтесь к нам в любое время и мы с радостью <br> ответим на ваши вопросы</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row-title-block">
+            <div class="gorizontal-line"></div>
+                <div><p>Свяжитесь с нами</p></div>
+            <div class="gorizontal-line"></div>
+        </div>
+
+        <div class="text-contact">
+            <p>Вы можете связаться со нами любым удобным для вас способом (через электронную почту, телефон или лично). Мы всегда на связи.  Вы также можете воспользоваться быстрой формой обратной связи на этой странице, чтобы задать интересующий вас вопрос. Мы будем рады ответить на ваши вопросы или предложить любую помощь.</p>
+        </div>
+    </div>
+
+    <div id="app" class="container">
+        <div class="block-contact">
+            <div class="forms">
+                <div class="mane-2">
+                    <form>
+                        <div id="name">
+                            <div class="form-row">
+                                <input type="text" name="login" placeholder="Ваше имя" class="login2" v-model="name" v-on:blur="validName">
+                                <input name="tel" type="tel" placeholder="Ваш телефон" class="tel2" v-model="phone" v-on:blur="validPhone">
+                            </div>
+                                <input name="email" type="email" placeholder="Ваш E-mail" class="email2"  v-model="email" v-on:blur="validEmail">
+                                <input type="text"  name="answer" placeholder="Ваше сообщение" class="otz2" v-model="feed">
+                            
+                                <div class="new2">
+                                    <p v-if="errorMessage1">Введите имя корректно!</p>
+                                </div>
+                                <div class="new2">
+                                    <p v-if="errorMessage2">Введите ваш телефон корректно!</p>
+                                </div>
+                                <div class="new2">
+                                    <p v-if="errorMessage3">Введите ваш E-mail корректно!</p>
+                                </div>
+
+                                <div class="knopka2" v-if = "name.length != 0 && phone.length != 0 && email.length != 0 && feed.length != 0 && errorMessage1 != true && errorMessage2 != true && errorMessage3 != true">
+                                     <button href="#" class="button2 button22">ОТПРАВИТЬ СООБЩЕНИЕ</button>
+                                </div>
+                                <div class="knopka2" v-else = "">
+                                    <button href="#" disabled class="button2">ОТПРАВИТЬ СООБЩЕНИЕ</button>
+                               </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+    
+            <div class="all-contact">
+                <div class="location">
+                    <img src="img/geo.png" alt="">
+                    <p>603157 г. Нижний Новгород ул. Коминтерна, д. 18-а</p>
+                </div>
+
+                <div class="message">
+                    <img src="img/email 1.png" alt="">
+                    <p>mdoun147@mail.ru</p>
+                </div>
+
+                <div class="tel-phone">
+                    <img src="img/telephone.png" alt="">
+                    <p>+7 (831) 270-92-13 (Бекирова Ольга Пантелеевна)</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="container">
+        <div class="row-title-block">
+            <div class="gorizontal-line"></div>
+                <div><p>Мы на карте</p></div>
+            <div class="gorizontal-line"></div>
+        </div>
+    </div>
+
+    <div class="map">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d657.4947137310292!2d43.8777183489498!3d56.3377707012049!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x968f9477467004de!2z0JTQtdGC0YHQutC40Lkg0KHQsNC0IOKEliAxNDc!5e0!3m2!1sru!2sru!4v1640114106068!5m2!1sru!2sru" width="1920s" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+    </div>
+
+    <script defer src="https://unpkg.com/vue@next"></script>
+    <script defer src="Java Script/vue2.js"></script>
+</body>
+
+
+
+
+<footer>
+    <div class="fon-dark">
+        <div class="container">
+            <div class="all-section">
+                <div class="section-1">
+                    <h1>МБДОУ детский сад № 147</h1>
+                    <p>У Вас есть возможность задать свой вопрос, озвучить <br> пожелание или предложение, а также выразить<br> благодарность  любому педагогу или специалисту <br> детского сада.  Для этого необходимо перейти на  <br> страницу "О нас" и оставить свой отзыв.</p>                </div>
+    
+    
+                <div class="section-2">
+                    <h1>Контакты</h1>
+
+                    <div class="foot-tel">
+                        <img src="img/tel-white.png" alt="">
+                        <p>+7 (831) 270-92-13</p>
+                    </div>
+
+                    <div class="foot-email">
+                        <img src="img/email.png" alt="">
+                        <p>mdoun147@mail.ru</p>
+                    </div>
+
+                    <div class="foot-geo">
+                        <img src="img/geo-white.png" alt="">
+                        <a href="https://www.google.com/maps/place/%D0%94%D0%B5%D1%82%D1%81%D0%BA%D0%B8%D0%B9+%D0%A1%D0%B0%D0%B4+%E2%84%96+147/@56.337519,43.8775772,18z/data=!4m9!1m2!2m1!1z0LTQtdGC0YHQutC40Lkg0YHQsNC0IDE0Nw!3m5!1s0x4151d6391761283b:0x968f9477467004de!8m2!3d56.3378213!4d43.8777781!15sChnQtNC10YLRgdC60LjQuSDRgdCw0LQgMTQ3kgEMa2luZGVyZ2FydGVu"><p>г. Нижний Новгород,<br> ул. Коминтерна, д. 18-а</p></a>
+                    </div>
+
+                </div>
+                
+                <div class="section-4">
+                    <h1>Навигация</h1>
+                    <div class="text-nav">
+                        <ul>
+                            <li><a href="index.html">Главная</a></li>
+                            <li><a href="index2.html">О нас</a></li>
+                            <li><a href="index3.html">Специалисты</a></li>
+                            <li><a href="index4.html">Мероприятия</a></li>
+                            <li><a href="index5.html">Программа развития</a></li>
+                            <li><a href="index6.html">Контакты</a></li>
+                        </ul>
+                    </div>
+                </div>
+    
+                <div class="section-3">
+                    <h1>Подписка на рассылку</h1>
+                    <p>Подпишитесь на рассылку и будьте в курсе последних <br> новостей о нашем детском саде!</p>
+                    
+                    <div class="mane">
+                        <form>
+                            <div id="name">
+                                <div class="form-row">
+                                    <input name="email" type="email" placeholder="Ваш E-mail" class="email">
+                                </div>
+                                <div class="knopka">
+                                    <button class="button24" type="submit">ПОДПИСАТЬСЯ</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="more-dark">
+        <div class="container">
+            <p>© 2022 «МБДОУ Детский сад №147»</p> 
+        </div>
+    </div>
+</footer>
+</html>
